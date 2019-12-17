@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
             msg = "The number on the small face must be less than the number on the large face";
         } else if (numDice > 300) {
             msg = "You may not roll more than 300 dice at once";
-        } else{
+        } else if (diceMax > 999) {
+            msg = "You may not roll dice with a large face higher than 999";
+        } else {
             // Creating the TextView objects
             TextView highestRollText = findViewById(R.id.highestRoll);
             TextView diceText = findViewById(R.id.diceView);
