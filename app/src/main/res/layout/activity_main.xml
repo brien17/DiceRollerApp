@@ -6,126 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/smallFace"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/largeFace"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
-
     <Button
         android:id="@+id/rollButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
         android:layout_marginBottom="57dp"
         android:background="@android:color/holo_blue_dark"
         android:onClick="roll"
         android:text="@string/roll_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/largeFace"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/smallFace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/smallFace"
-        app:layout_constraintTop_toTopOf="@+id/smallFace" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="@string/smallest_dice_face"
-        app:layout_constraintEnd_toEndOf="@+id/smallFace"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/largest_dice_face"
-        app:layout_constraintBottom_toTopOf="@+id/largeFace"
-        app:layout_constraintEnd_toEndOf="@+id/largeFace" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginBottom="91dp"
-        android:text="@string/number_of_dice"
-        app:layout_constraintBottom_toTopOf="@+id/highestRoll"
-        app:layout_constraintEnd_toStartOf="@+id/numDice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/numDice"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginBottom="93dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/totalRoll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/diceView" />
 
     <TextView
         android:id="@+id/diceView"
-        android:layout_width="335dp"
+        android:layout_width="337dp"
         android:layout_height="0dp"
-        android:layout_marginTop="29dp"
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toTopOf="@+id/rollButton"
         app:layout_constraintEnd_toEndOf="@+id/highestRoll"
         app:layout_constraintStart_toEndOf="@+id/highestRoll"
-        app:layout_constraintTop_toBottomOf="@+id/totalRoll" />
+        app:layout_constraintTop_toBottomOf="@+id/highestRoll" />
 
     <TextView
         android:id="@+id/highestRoll"
-        android:layout_width="0dp"
+        android:layout_width="167dp"
         android:layout_height="21dp"
         android:layout_marginStart="39dp"
         android:layout_marginLeft="39dp"
-        android:layout_marginTop="315dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/diceView"
         app:layout_constraintEnd_toStartOf="@+id/totalRoll"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <TextView
         android:id="@+id/totalRoll"
@@ -136,5 +52,85 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/highestRoll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/highestRoll" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="394dp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="377dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/highestRoll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="141dp"
+                android:layout_height="wrap_content"
+                android:text="@string/smallest_dice_face" />
+
+            <EditText
+                android:id="@+id/smallFace"
+                android:layout_width="243dp"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/largest_dice_face" />
+
+            <EditText
+                android:id="@+id/largeFace"
+                android:layout_width="181dp"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_of_dice" />
+
+            <EditText
+                android:id="@+id/numDice"
+                android:layout_width="181dp"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:inputType="number" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
