@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast myToast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
                 myToast.show();
             } else if (diceMax > 999) { // Checking the number of the large face not larger than 999
-                msg = "You may not roll dice with a large face higher than 99";
+                msg = "You may not roll dice with a large face higher than 999";
                 Toast myToast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
                 myToast.show();
             } else {
